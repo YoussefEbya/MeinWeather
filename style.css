@@ -116,6 +116,8 @@ nav {
     justify-content: center;
     gap: 0.7em;
 
+    margin-bottom: 2em;
+
     svg {
         position: relative;
         left: 40px;
@@ -153,4 +155,116 @@ nav {
     
     width: 80%;
     max-width: 600px;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+#main-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 4em 3em;
+
+    background-image: url(Assets/sky.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: var(--br);
+}
+
+#main-weather {
+    width: 70%;
+}
+
+#city-time {
+
+
+    #city {
+        font-size: 3rem;
+    }
+    
+    #time {
+        font-size: 2rem;
+    }
+}
+
+#img-num {
+    display: flex;
+    align-items: center;
+
+    
+    #num {
+        font-size: 7rem;
+        font-style: italic;
+    }
+
+    img {
+        width:  80px;
+        aspect-ratio: 1;
+    }
+}
+
+#long-forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.first-row {
+    background-color: transparent !important;
+    
+    .box {
+        display: flex;
+        align-items: center;
+    }
+
+    #forecast-day-wrapper {
+        padding: 0.6em 5em;
+        
+
+        background: var(--glass);
+        
+    }
+
+    select {
+
+        background: transparent;
+        color: aliceblue;
+
+        border: none;
+        border-radius: var(--br);
+        
+        cursor: pointer;
+        appearance: none;
+    }
+    
+    select:focus {
+        outline: none;
+    }
+    
+    option {
+        background: #1a1a4a;
+        color: aliceblue;
+        border: none;
+        outline: none;
+    }
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    background-color: var(--glass);
+    border-radius: var(--br);
+}
+
+.icon-time {
+    display: flex;
+    align-items: center;
 }
