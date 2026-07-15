@@ -27,17 +27,24 @@ body {
     background-color: #02012B;
     color: aliceblue;
     font-family: "Google Sans";
-    padding: 2% 6%;
+    padding: max(2%, 1.3rem) 6%;
 }
 
 img {
     max-width: 100%;
 }
 
+
+/* all clamps were calculated based on: 
+   viewport width from 320px to 1275px */
+
+/* https://min-max-calculator.9elements.com */
+
 svg {
     width: clamp(1.4rem, 1.199rem + 1.01vw, 2rem);
     aspect-ratio: 1;
 }
+
 
 button:hover {
     cursor: pointer;
@@ -48,14 +55,16 @@ input::placeholder, input:focus, input {
     outline: none;
     
     /* controls both placeholder and user input font size */
-    font-size: clamp(0.75rem, 0.636rem + 0.57vw, 2rem);
+    font-size: clamp(0.85rem, 0.636rem + 0.57vw, 2rem);
 }
+
 
 /* this part helps removing the place holder once i focus the input 
    instead once i type */
 input::placeholder {
     transition: opacity 0.2s;
 }
+
 
 input:focus::placeholder {
     opacity: 0;
@@ -82,7 +91,6 @@ nav {
 #logo {
     gap: 0.625em;
 
-    font-size: 2rem;
     font-size: clamp(1.3rem, 1.065rem + 1.17vw, 2rem);
 
     font-weight: 600;
@@ -94,7 +102,6 @@ nav {
     gap: 0.41em;
     padding: 0.6em;
 
-    font-size: 1.5rem;
     font-size: clamp(0.5rem, 0.165rem + 1.68vw, 1.5rem);
 
     font-weight: 400; 
@@ -117,7 +124,7 @@ nav {
     justify-content: center;
     gap: 0.7em;
 
-    margin-bottom: 2em;
+    margin-bottom: clamp(1.2rem, 0.798rem + 2.01vw, 2.4rem);
 
     svg {
         position: absolute;
@@ -142,7 +149,7 @@ nav {
     button {
         padding: 0.7em 1.2em;
 
-        font-size: clamp(0.75rem, 0.636rem + 0.57vw, 2rem);
+        font-size: clamp(0.85rem, 0.636rem + 0.57vw, 2rem);
         background-color: #4657D9;
         color: aliceblue;
     }
@@ -171,7 +178,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     
-    padding: 4em 3em;
+    padding: clamp(2rem, 1.33rem + 3.35vw, 4rem) clamp(0rem, -1.005rem + 5.03vw, 3rem);
 
     background-image: url(Assets/sky.avif);
     background-repeat: no-repeat;
@@ -185,29 +192,27 @@ nav {
 
 #city-time {
 
-
     #city {
-        font-size: 3rem;
+        font-size: clamp(2rem, 1.665rem + 1.68vw, 3rem);
     }
     
     #time {
-        font-size: 2rem;
+        font-size: clamp(1.33rem, 1.105rem + 1.12vw, 2rem);
     }
 }
 
 #img-num {
     display: flex;
     align-items: center;
-
     
     #num {
-        font-size: 7rem;
+        font-size: clamp(4.66rem, 3.876rem + 3.92vw, 7rem);
+        font-weight: 600;
         font-style: italic;
     }
 
     img {
-        width: 5rem;
-
+        width: clamp(3.33rem, 2.77rem + 2.8vw, 5rem);
         aspect-ratio: 1;
     }
 }
@@ -222,7 +227,7 @@ nav {
     
     background-color: var(--glass);
     border-radius: var(--br);
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 0.832rem + 0.84vw, 1.5rem);
 }
 
 .row {
@@ -263,12 +268,15 @@ nav {
     }
 
     select {
-        padding-left: 0.5em;
+        padding-left:  0.5em;
+
         padding-right: 0.5em;
+        padding-right: 0em;
+        
 
         background: transparent;
         color: aliceblue;
-        font-size: 1.5rem;
+        font-size: clamp(1rem, 0.832rem + 0.84vw, 1.5rem);
 
         border: none;
         
@@ -283,14 +291,13 @@ nav {
     option {
         background: #1a1a4a;
         color: aliceblue;
-        font-size: 1.5rem;
         
         border: none;
     }
 
     svg {
         position: absolute;
-        left: 6rem;
+        left: clamp(4rem, 3.33rem + 3.35vw, 6rem);
         pointer-events: none;
     }
 }
@@ -300,12 +307,59 @@ nav {
 @media (max-width : 380px) {
 
     #units {
+        padding: 1em;
         #unit-caret, p {display: none;}
     }
 
+}
 
-
+@media (max-width : 768px) {
+    
     #main-weather {
+        margin-bottom: 1.2em;
+    }
+
+    #main-weather, #long-forecast {
         width: 100%;
     }
+
+    #main-card {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #city-time {
+        text-align: center;
+    }
+
+}
+
+@media (min-width : 768px) {
+
+    #long-forecast {
+        font-size: clamp(1rem, 0.243rem + 1.58vw, 1.5rem);
+    }
+
+    .first-row {
+        select {
+            font-size: clamp(1rem, 0.243rem + 1.58vw, 1.5rem);
+        }
+
+        svg {
+            left: clamp(4rem, 0.97rem + 6.31vw, 6rem);
+        }
+    }
+
+    #img-num {
+
+        #num {
+            font-size: clamp(4rem, -0.544rem + 9.47vw, 7rem);
+        }
+
+        img {
+            width: clamp(2.85rem, -0.407rem + 6.79vw, 5rem);
+        }
+
+    }
+
 }
