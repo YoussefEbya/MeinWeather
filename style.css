@@ -35,7 +35,7 @@ img {
 }
 
 svg {
-    width: 2rem;
+    width: clamp(1.4rem, 1.199rem + 1.01vw, 2rem);
     aspect-ratio: 1;
 }
 
@@ -76,19 +76,18 @@ nav {
 #logo, #units {
     display: flex;
     align-items: center;
-
-    &:hover {
-        cursor: pointer;
-    }
+    cursor: pointer;
 }
 
 #logo {
     gap: 0.625em;
 
-    font-size: 2rem;    
+    font-size: 2rem;
+    font-size: clamp(1.3rem, 1.065rem + 1.17vw, 2rem);
+
     font-weight: 600;
     
-    img {width: 4rem;}
+    img {width: clamp(2rem, 1.33rem + 3.35vw, 4rem);}
 }
 
 #units {
@@ -96,6 +95,8 @@ nav {
     padding: 0.6em;
 
     font-size: 1.5rem;
+    font-size: clamp(0.5rem, 0.165rem + 1.68vw, 1.5rem);
+
     font-weight: 400; 
 
     background-color: var(--glass);
@@ -106,7 +107,7 @@ nav {
     margin: 0.5em 0;
     
     font-family: "Cantarell";
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 1.997rem + 2.51vw, 4rem);
     text-align: center;
 
 }
@@ -119,33 +120,31 @@ nav {
     margin-bottom: 2em;
 
     svg {
-        position: relative;
-        left: 2.25rem;
-        
+        position: absolute;
+        /* basically moving the icon in the space that i made in the input */
+        left: clamp(0.5rem, 0.433rem + 0.34vw, 0.7rem);
+        top:  clamp(0.3rem, 0.199rem + 0.5vw, 0.6rem);
     }
 
     button, input {
         border: 0;
         border-radius: var(--br);
     }
+    
+    input {
+        width: 100%;
+        /* basically making a space for the icon */
+        padding-left: 2.8em;
+        
+        background-color: var(--glass);
+    }
 
     button {
         padding: 0.7em 1.2em;
-        /* to make the whole (search bar and button) on the center again
-           (after being pushed to right by the padding on the input) */
-        margin-right: 2.6rem;
-        
 
         font-size: clamp(0.75rem, 0.636rem + 0.57vw, 2rem);
         background-color: #4657D9;
         color: aliceblue;
-    }
-
-    input {
-        width: 100%;
-        padding-left: 2.6rem;
-
-        background-color: var(--glass);
     }
 }
 
@@ -293,5 +292,20 @@ nav {
         position: absolute;
         left: 6rem;
         pointer-events: none;
+    }
+}
+
+
+
+@media (max-width : 380px) {
+
+    #units {
+        #unit-caret, p {display: none;}
+    }
+
+
+
+    #main-weather {
+        width: 100%;
     }
 }
