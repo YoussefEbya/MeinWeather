@@ -12,6 +12,8 @@
 :root {
     --br: 20px;
     --glass: rgba(255, 255, 255, 0.12);
+    --stat-size: clamp(1rem, 0.832rem + 0.84vw, 1.5rem);
+    --mid-stat-size: clamp(1rem, 0.243rem + 1.58vw, 1.5rem);
 }
 
 *, *::before, *::after {
@@ -206,13 +208,17 @@ nav {
     align-items: center;
     
     #num {
-        font-size: clamp(4.66rem, 3.876rem + 3.92vw, 7rem);
+        font-size: clamp(4rem, -0.544rem + 9.47vw, 7rem);
+        /* viewport from 768 to 1275 */
+
         font-weight: 600;
         font-style: italic;
     }
 
     img {
-        width: clamp(3.33rem, 2.77rem + 2.8vw, 5rem);
+        width: clamp(2.85rem, -0.407rem + 6.79vw, 5rem);
+        /* viewport from 768 to 1275 */
+
         aspect-ratio: 1;
     }
 }
@@ -227,7 +233,8 @@ nav {
     
     background-color: var(--glass);
     border-radius: var(--br);
-    font-size: clamp(1rem, 0.832rem + 0.84vw, 1.5rem);
+    font-size: clamp(1rem, 0.243rem + 1.58vw, 1.5rem);
+    /* viewport from 768 to 1275 */
 }
 
 .row {
@@ -276,7 +283,9 @@ nav {
 
         background: transparent;
         color: aliceblue;
-        font-size: clamp(1rem, 0.832rem + 0.84vw, 1.5rem);
+
+        font-size: clamp(1rem, 0.243rem + 1.58vw, 1.5rem);
+        /* viewport from 768 to 1275 */
 
         border: none;
         
@@ -297,9 +306,28 @@ nav {
 
     svg {
         position: absolute;
-        left: clamp(4rem, 3.33rem + 3.35vw, 6rem);
+        
+        left: clamp(4rem, 0.97rem + 6.31vw, 6rem);
+        /* viewport from 768 to 1275 */
+        
         pointer-events: none;
     }
+}
+
+#stats {
+    display: flex;
+    justify-content: space-between;
+
+
+    font-size: clamp(1rem, 0.832rem + 0.84vw, 1.5rem);
+    
+    .stat {
+        padding: 0.5em;
+        
+        background-color: var(--glass);
+        border-radius: var(--br);
+    }
+
 }
 
 
@@ -330,36 +358,6 @@ nav {
 
     #city-time {
         text-align: center;
-    }
-
-}
-
-@media (min-width : 768px) {
-
-    #long-forecast {
-        font-size: clamp(1rem, 0.243rem + 1.58vw, 1.5rem);
-    }
-
-    .first-row {
-        select {
-            font-size: clamp(1rem, 0.243rem + 1.58vw, 1.5rem);
-        }
-
-        svg {
-            left: clamp(4rem, 0.97rem + 6.31vw, 6rem);
-        }
-    }
-
-    #img-num {
-
-        #num {
-            font-size: clamp(4rem, -0.544rem + 9.47vw, 7rem);
-        }
-
-        img {
-            width: clamp(2.85rem, -0.407rem + 6.79vw, 5rem);
-        }
-
     }
 
 }
