@@ -181,6 +181,7 @@ nav {
     align-items: center;
     
     padding: clamp(2rem, 1.33rem + 3.35vw, 4rem) clamp(0rem, -1.005rem + 5.03vw, 3rem);
+    margin-bottom: clamp(1.2rem, 0.932rem + 1.34vw, 2rem);
 
     background-image: url(Assets/sky.avif);
     background-repeat: no-repeat;
@@ -317,13 +318,19 @@ nav {
 #stats {
     display: flex;
     justify-content: space-between;
-
+    gap: 1em;
 
     font-size: clamp(1rem, 0.832rem + 0.84vw, 1.5rem);
     
     .stat {
-        padding: 0.5em;
-        
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+
+        padding: 1em clamp(0.3rem, 0.065rem + 1.17vw, 1rem);
+        flex-grow: 1; 
+        /* this is related to the flex on stats not stat */
+
         background-color: var(--glass);
         border-radius: var(--br);
     }
