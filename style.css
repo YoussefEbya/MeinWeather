@@ -83,7 +83,7 @@ nav {
 }
 
 #logo {
-    gap: 20px;
+    gap: 0.625em;
 
     font-size: 2rem;    
     font-weight: 600;
@@ -92,7 +92,7 @@ nav {
 }
 
 #units {
-    gap: 10px;
+    gap: 0.41em;
     padding: 0.6em;
 
     font-size: 1.5rem;
@@ -120,11 +120,12 @@ nav {
 
     svg {
         position: relative;
-        left: 40px;
+        left: 2.25rem;
+        
     }
 
     button, input {
-        border: 0px;
+        border: 0;
         border-radius: var(--br);
     }
 
@@ -132,7 +133,8 @@ nav {
         padding: 0.7em 1.2em;
         /* to make the whole (search bar and button) on the center again
            (after being pushed to right by the padding on the input) */
-        margin-right: 50px;
+        margin-right: 2.6rem;
+        
 
         font-size: clamp(0.75rem, 0.636rem + 0.57vw, 2rem);
         background-color: #4657D9;
@@ -141,7 +143,8 @@ nav {
 
     input {
         width: 100%;
-        padding-left: 50px;
+        padding-left: 2.6rem;
+
         background-color: var(--glass);
     }
 }
@@ -154,7 +157,7 @@ nav {
     justify-content: center;
     
     width: 80%;
-    max-width: 600px;
+    max-width: 37.5rem;
 }
 
 .main-wrapper {
@@ -162,7 +165,6 @@ nav {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
 
 
 #main-card {
@@ -179,7 +181,7 @@ nav {
 }
 
 #main-weather {
-    width: 70%;
+    width: 72%;
 }
 
 #city-time {
@@ -205,7 +207,8 @@ nav {
     }
 
     img {
-        width:  80px;
+        width: 5rem;
+
         aspect-ratio: 1;
     }
 }
@@ -213,12 +216,37 @@ nav {
 #long-forecast {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.42em;
+
+    padding: 1em;
+    width: 27%;
     
+    background-color: var(--glass);
+    border-radius: var(--br);
+    font-size: 1.5rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    
+
+    background-color: var(--glass);
+    border-radius: var(--br);
+}
+
+.icon-time {
+    display: flex;
+    align-items: center;
+    gap: 0.42em;
 }
 
 .first-row {
     background-color: transparent !important;
+    justify-content: space-between;
+    padding: 0;
     
     .box {
         display: flex;
@@ -226,23 +254,27 @@ nav {
     }
 
     #forecast-day-wrapper {
-        padding: 0.6em 5em;
-        
+        position: relative;
+        padding: 0.6em 0;
 
         background: var(--glass);
-        
+        border-radius: var(--br);
+
+        cursor: pointer;
     }
 
     select {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
 
         background: transparent;
         color: aliceblue;
+        font-size: 1.5rem;
 
         border: none;
-        border-radius: var(--br);
         
-        cursor: pointer;
         appearance: none;
+        cursor: pointer;
     }
     
     select:focus {
@@ -252,19 +284,14 @@ nav {
     option {
         background: #1a1a4a;
         color: aliceblue;
+        font-size: 1.5rem;
+        
         border: none;
-        outline: none;
     }
-}
 
-.row {
-    display: flex;
-    align-items: center;
-    background-color: var(--glass);
-    border-radius: var(--br);
-}
-
-.icon-time {
-    display: flex;
-    align-items: center;
+    svg {
+        position: absolute;
+        left: 6rem;
+        pointer-events: none;
+    }
 }
