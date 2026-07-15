@@ -316,23 +316,66 @@ nav {
 }
 
 #stats {
+    overflow-x: auto;
+    
     display: flex;
     justify-content: space-between;
     gap: 1em;
 
+    margin-bottom: clamp(1.2rem, 0.932rem + 1.34vw, 2rem);
+
     font-size: clamp(1rem, 0.832rem + 0.84vw, 1.5rem);
-    
-    .stat {
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    padding: 1em clamp(0.3rem, 0.065rem + 1.17vw, 1rem);
+    flex-grow: 1; 
+    /* this is related to the flex on stats not stat */
+
+    background-color: var(--glass);
+    border-radius: var(--br);
+}
+
+.stat-text {
+    font-size: 0.9em;
+}
+
+.stat-num {
+    font-size: 1.3em;
+}
+
+#stats2 {
+    overflow-x: auto;
+
+    font-size: clamp(1rem, 0.899rem + 0.5vw, 1.3rem);
+
+    #stats2-title {
+        margin-bottom: 1rem;
+    }
+
+    #stats2-content {
         display: flex;
-        flex-direction: column;
-        gap: 0.5em;
+        justify-content: space-between;
+        gap: 1em;
+    }
 
-        padding: 1em clamp(0.3rem, 0.065rem + 1.17vw, 1rem);
-        flex-grow: 1; 
-        /* this is related to the flex on stats not stat */
+    .stat {
+        align-items: center;
 
-        background-color: var(--glass);
-        border-radius: var(--br);
+        padding-top:    0.7em;
+        padding-bottom: 0.7em;
+    }
+
+    .stat2-nums {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
     }
 
 }
@@ -365,6 +408,19 @@ nav {
 
     #city-time {
         text-align: center;
+    }
+
+    #stats {
+        flex-wrap: wrap;
+    }
+
+    #stats2-content {
+        flex-wrap: wrap;
+        justify-content: center !important;
+
+        .stat {
+            flex-grow: 0;
+        }
     }
 
 }
