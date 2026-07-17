@@ -101,6 +101,7 @@ nav {
 }
 
 #units {
+    position: relative;
     gap: 0.41em;
     padding: 0.6em;
 
@@ -110,6 +111,39 @@ nav {
 
     background-color: var(--glass);
     border-radius: var(--br);
+
+    select {
+        padding-right: 0.5em;
+        
+    
+        background: transparent;
+        color: aliceblue;
+    
+        font-size: clamp(1rem, 0.243rem + 1.58vw, 1.5rem);
+        /* viewport from 768 to 1275 */
+    
+        border: none;
+        
+        appearance: none;
+        cursor: pointer;
+    }
+    
+    select:focus {
+        outline: none;
+    }
+    
+    option {
+        background: #1a1a4a;
+        color: aliceblue;
+        
+        border: none;
+    }
+
+    #unit-caret {
+        position: absolute;
+        right: 0.5em;
+        pointer-events: none;
+    }
 }
 
 #title {
@@ -277,11 +311,8 @@ nav {
 
     select {
         padding-left:  0.5em;
-
-        padding-right: 0.5em;
         padding-right: 0em;
         
-
         background: transparent;
         color: aliceblue;
 
@@ -386,7 +417,8 @@ nav {
 
     #units {
         padding: 1em;
-        #unit-caret, p {display: none;}
+        #unit-caret, #unit-gear {display: none;}
+        select {padding: 0;}
     }
 
 }
